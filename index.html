@@ -32,7 +32,7 @@
       var runQuery = function() {
         var eventName = eventSelect.MPEventSelect('value'),
             propName  = propSelect.MPPropertySelect('value'),
-            dateRange = dateSelect.val({from: new moment().subtract(91,'days').toDate(), to: new Date()});
+            dateRange = dateSelect.MPDatepicker('value');
 
         if (eventName) {
           MP.api.segment(eventName, propName, dateRange).done(function(results) {
